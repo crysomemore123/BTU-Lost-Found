@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BTU Lost & Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">BTU Lost & Found</div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link">Home</a></li>
+                    <li><a href="#" id="lost-link">Lost</a></li>
+                    <li><a href="#" id="found-link">Found</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="actions">
+                <button class="action-btn" id="show-modal-btn">I Found an Item</button>
+            </div>
+            <h2>Found Items</h2>
+            <div id="items-grid" class="items-grid">
+                </div>
+        </div>
+    </main>
+
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Add a New Item</h2>
+            <form id="item-form">
+                <label for="item-name">Item Name:</label>
+                <input type="text" id="item-name" required>
+
+                <label for="item-location">Location Found:</label>
+                <input type="text" id="item-location" required>
+
+                <label for="item-type">Type:</label>
+                <select id="item-type">
+                    <option value="found">Found</option>
+                    <option value="lost">Lost</option>
+                </select>
+
+                <label for="item-image">Image:</label>
+                <input type="file" id="item-image" accept="image/*" required>
+
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
