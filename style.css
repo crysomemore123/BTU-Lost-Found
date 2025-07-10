@@ -1,6 +1,6 @@
 /* General Body Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'BPG Nino Mtavruli', sans-serif; /* A common Georgian font */
     margin: 0;
     background-color: #f4f4f9;
     color: #333;
@@ -26,10 +26,10 @@ header .container {
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #0056b3;
+/* Updated Logo Style for the Image */
+.logo img {
+    height: 40px; /* Adjust height as needed */
+    display: block;
 }
 
 nav ul {
@@ -79,6 +79,7 @@ main h2 {
     font-size: 1.1rem;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'BPG Nino Mtavruli', sans-serif;
 }
 
 .action-btn:hover {
@@ -177,6 +178,7 @@ main h2 {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+    font-family: 'BPG Nino Mtavruli', sans-serif;
 }
 
 #item-form button {
@@ -189,6 +191,7 @@ main h2 {
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: 'BPG Nino Mtavruli', sans-serif;
 }
 
 #item-form button:hover {

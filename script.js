@@ -11,13 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const sectionTitle = document.querySelector('main h2');
 
 
-    // --- State ---
-    // In a real app, this would come from a database.
+    // --- State (in Georgian) ---
     let items = [
-        { name: 'Airpods', location: 'BTU Building A', type: 'found', image: 'https://via.placeholder.com/300x200.png?text=Airpods' },
-        { name: 'Student ID Card', location: 'Library', type: 'found', image: 'https://via.placeholder.com/300x200.png?text=ID+Card' },
-        { name: 'Black Backpack', location: 'Cafeteria', type: 'lost', image: 'https://via.placeholder.com/300x200.png?text=Backpack' },
-        { name: 'Water Bottle', location: 'Gym', type: 'found', image: 'https://via.placeholder.com/300x200.png?text=Bottle' },
+        { name: 'Airpods', location: 'BTU-ს A კორპუსი', type: 'ნაპოვნია', image: 'https://via.placeholder.com/300x200.png?text=Airpods' },
+        { name: 'სტუდენტის ბარათი', location: 'ბიბლიოთეკა', type: 'ნაპოვნია', image: 'https://via.placeholder.com/300x200.png?text=ID+Card' },
+        { name: 'შავი ზურგჩანთა', location: 'კაფეტერია', type: 'დაკარგულია', image: 'https://via.placeholder.com/300x200.png?text=Backpack' },
+        { name: 'წყლის ბოთლი', location: 'სპორტდარბაზი', type: 'ნაპოვნია', image: 'https://via.placeholder.com/300x200.png?text=Bottle' },
     ];
 
     // --- Functions ---
@@ -27,18 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
         itemsGrid.innerHTML = ''; // Clear existing items
         
         let filteredItems = items;
-        if (filter === 'lost') {
-            filteredItems = items.filter(item => item.type === 'lost');
-            sectionTitle.textContent = "Lost Items";
-        } else if (filter === 'found') {
-            filteredItems = items.filter(item => item.type === 'found');
-            sectionTitle.textContent = "Found Items";
+        if (filter === 'დაკარგულია') {
+            filteredItems = items.filter(item => item.type === 'დაკარგულია');
+            sectionTitle.textContent = "დაკარგული ნივთები";
+        } else if (filter === 'ნაპოვნია') {
+            filteredItems = items.filter(item => item.type === 'ნაპოვნია');
+            sectionTitle.textContent = "ნაპოვნი ნივთები";
         } else {
-            sectionTitle.textContent = "All Items";
+            sectionTitle.textContent = "ყველა ნივთი";
         }
 
         if (filteredItems.length === 0) {
-            itemsGrid.innerHTML = '<p>No items to display.</p>';
+            itemsGrid.innerHTML = '<p>სია ცარიელია.</p>';
             return;
         }
 
@@ -48,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <img src="${item.image}" alt="${item.name}">
                     <div class="item-card-content">
                         <h3>${item.name}</h3>
-                        <p><strong>Status:</strong> <span style="color: ${item.type === 'found' ? 'green' : 'red'}; text-transform: capitalize;">${item.type}</span></p>
-                        <p><strong>Location:</strong> ${item.location}</p>
+                        <p><strong>სტატუსი:</strong> <span style="color: ${item.type === 'ნაპოვნია' ? 'green' : 'red'}; text-transform: capitalize;">${item.type}</span></p>
+                        <p><strong>ადგილმდებარეობა:</strong> ${item.location}</p>
                     </div>
                 </div>
             `;
@@ -89,13 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: itemName,
                 location: itemLocation,
                 type: itemType,
-                image: e.target.result // Use image data URL
+                image: e.target.result
             };
 
-            items.unshift(newItem); // Add to the beginning of the array
-            renderItems(); // Re-render all items
-            modal.style.display = 'none'; // Hide modal
-            itemForm.reset(); // Reset form fields
+            items.unshift(newItem); 
+            renderItems(itemType); // Show the list where the new item belongs
+            modal.style.display = 'none';
+            itemForm.reset();
         };
 
         if (itemImageInput.files[0]) {
@@ -105,10 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Navigation link event listeners
     homeLink.addEventListener('click', (e) => { e.preventDefault(); renderItems('all'); });
-    lostLink.addEventListener('click', (e) => { e.preventDefault(); renderItems('lost'); });
-    foundLink.addEventListener('click', (e) => { e.preventDefault(); renderItems('found'); });
+    lostLink.addEventListener('click', (e) => { e.preventDefault(); renderItems('დაკარგულია'); });
+    foundLink.addEventListener('click', (e) => { e.preventDefault(); renderItems('ნაპოვნია'); });
 
 
     // --- Initial Render ---
-    renderItems('found'); // Initially show 'found' items
+    renderItems('ნაპოვნია'); // Initially show 'found' items
 });

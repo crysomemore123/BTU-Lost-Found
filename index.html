@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTU Lost & Found</title>
+    <title>BTU - დაკარგული და ნაპოვნი ნივთები</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="container">
-            <div class="logo">BTU Lost & Found</div>
+            <div class="logo">
+                <a href="https://btu.edu.ge/" target="_blank">
+                    <img src="https://btu.edu.ge/wp-content/uploads/2023/11/logo-geo.svg" alt="BTU Logo">
+                </a>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#" id="home-link">Home</a></li>
-                    <li><a href="#" id="lost-link">Lost</a></li>
-                    <li><a href="#" id="found-link">Found</a></li>
+                    <li><a href="#" id="home-link">მთავარი</a></li>
+                    <li><a href="#" id="lost-link">დაკარგული</a></li>
+                    <li><a href="#" id="found-link">ნაპოვნი</a></li>
                 </ul>
             </nav>
         </div>
@@ -24,9 +28,9 @@
     <main>
         <div class="container">
             <div class="actions">
-                <button class="action-btn" id="show-modal-btn">I Found an Item</button>
+                <button class="action-btn" id="show-modal-btn">ნივთის დამატება</button>
             </div>
-            <h2>Found Items</h2>
+            <h2>ნაპოვნი ნივთები</h2>
             <div id="items-grid" class="items-grid">
                 </div>
         </div>
@@ -35,24 +39,24 @@
     <div id="item-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn">&times;</span>
-            <h2>Add a New Item</h2>
+            <h2>ახალი ნივთის დამატება</h2>
             <form id="item-form">
-                <label for="item-name">Item Name:</label>
+                <label for="item-name">ნივთის სახელი:</label>
                 <input type="text" id="item-name" required>
 
-                <label for="item-location">Location Found:</label>
+                <label for="item-location">ადგილმდებარეობა:</label>
                 <input type="text" id="item-location" required>
 
-                <label for="item-type">Type:</label>
+                <label for="item-type">სტატუსი:</label>
                 <select id="item-type">
-                    <option value="found">Found</option>
-                    <option value="lost">Lost</option>
+                    <option value="ნაპოვნია">ნაპოვნია</option>
+                    <option value="დაკარგულია">დაკარგულია</option>
                 </select>
 
-                <label for="item-image">Image:</label>
+                <label for="item-image">სურათი:</label>
                 <input type="file" id="item-image" accept="image/*" required>
 
-                <button type="submit">Add Item</button>
+                <button type="submit">დამატება</button>
             </form>
         </div>
     </div>
