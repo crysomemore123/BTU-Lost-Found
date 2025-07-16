@@ -197,3 +197,41 @@ main h2 {
 #item-form button:hover {
     background-color: #218838;
 }
+
+/* --- Responsive Styles for Mobile and Tablet --- */
+@media (max-width: 768px) {
+
+    /* Make header stack vertically */
+    header .container {
+        flex-direction: column;
+        gap: 15px; /* Add space between logo and nav */
+    }
+
+    /* Center navigation links */
+    nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    nav ul li {
+        margin: 0 15px; /* Adjust spacing between nav items */
+    }
+
+    /* Make the "Add Item" button slightly smaller */
+    .action-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    
+    /* Your grid is already responsive, but we can reduce the minimum size slightly */
+    .items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    /* Adjust modal for smaller screens */
+    .modal-content {
+        width: 90%;
+        margin: 5% auto; /* Reduce top margin */
+        padding: 20px;
+    }
+}
