@@ -8,56 +8,72 @@
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="https://btu.edu.ge/" target="_blank">
-                    <img src="images/btu-logo.svg" alt="BTU Logo">
-                </a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#" id="home-link">მთავარი</a></li>
-                    <li><a href="#" id="lost-link">დაკარგული</a></li>
-                    <li><a href="#" id="found-link">ნაპოვნი</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="container">
-            <div class="actions">
-                <button class="action-btn" id="show-modal-btn">ნივთის დამატება</button>
-            </div>
-            <h2>ნაპოვნი ნივთები</h2>
-            <div id="items-grid" class="items-grid">
-                </div>
-        </div>
-    </main>
-
-    <div id="item-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>ახალი ნივთის დამატება</h2>
-            <form id="item-form">
-                <label for="item-name">ნივთის სახელი:</label>
-                <input type="text" id="item-name" required>
-
-                <label for="item-location">ადგილმდებარეობა:</label>
-                <input type="text" id="item-location" required>
-
-                <label for="item-type">სტატუსი:</label>
-                <select id="item-type">
-                    <option value="ნაპოვნია">ნაპოვნია</option>
-                    <option value="დაკარგულია">დაკარგულია</option>
-                </select>
-
-                <label for="item-image">სურათი:</label>
-                <input type="file" id="item-image" accept="image/*" required>
-
-                <button type="submit">დამატება</button>
+    <div id="login-overlay">
+        <div class="login-box">
+            <h2>ავტორიზაცია</h2>
+            <form id="login-form">
+                <label for="email">BTU-ს იმეილი:</label>
+                <input type="email" id="email" placeholder="student@btu.edu.ge" required>
+                <label for="password">პაროლი:</label>
+                <input type="password" id="password" required>
+                <button type="submit">შესვლა</button>
+                <p id="login-error" class="error-message"></p>
             </form>
+        </div>
+    </div>
+
+    <div id="main-content">
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="https://btu.edu.ge/" target="_blank">
+                        <img src="BTU-logo.svg" alt="BTU Logo">
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" id="home-link">მთავარი</a></li>
+                        <li><a href="#" id="lost-link">დაკარგული</a></li>
+                        <li><a href="#" id="found-link">ნაპოვნი</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="actions">
+                    <button class="action-btn" id="show-modal-btn">ნივთის დამატება</button>
+                </div>
+                <h2>ნაპოვნი ნივთები</h2>
+                <div id="items-grid" class="items-grid">
+                    </div>
+            </div>
+        </main>
+
+        <div id="item-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>ახალი ნივთის დამატება</h2>
+                <form id="item-form">
+                    <label for="item-name">ნივთის სახელი:</label>
+                    <input type="text" id="item-name" required>
+
+                    <label for="item-location">ადგილმდებარეობა:</label>
+                    <input type="text" id="item-location" required>
+
+                    <label for="item-type">სტატუსი:</label>
+                    <select id="item-type">
+                        <option value="ნაპოვნია">ნაპოვნია</option>
+                        <option value="დაკარგულია">დაკარგულია</option>
+                    </select>
+
+                    <label for="item-image">სურათი:</label>
+                    <input type="file" id="item-image" accept="image/*" required>
+
+                    <button type="submit">დამატება</button>
+                </form>
+            </div>
         </div>
     </div>
 

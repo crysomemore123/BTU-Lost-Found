@@ -12,6 +12,82 @@ body {
     max-width: 1200px;
 }
 
+/* --- Login Screen Styles --- */
+#login-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+    color: #0056b3;
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-family: 'BPG Nino Mtavruli', sans-serif;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'BPG Nino Mtavruli', sans-serif;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: #d93025; /* Red for errors */
+    margin-top: 15px;
+    min-height: 20px; /* Prevents layout shifting when error appears */
+    font-size: 0.9rem;
+}
+
+/* Hide main content initially */
+#main-content {
+    display: none;
+}
+
 /* Header Styles */
 header {
     background-color: #fff;
@@ -26,9 +102,9 @@ header .container {
     align-items: center;
 }
 
-/* Updated Logo Style for the Image */
+/* --- MODIFIED: Increased logo size --- */
 .logo img {
-    height: 40px; /* Adjust height as needed */
+    height: 60px; /* Increased from 40px */
     display: block;
 }
 
@@ -40,13 +116,15 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px; /* Increased margin slightly for better spacing */
 }
 
+/* --- MODIFIED: Increased nav link font size --- */
 nav ul li a {
     text-decoration: none;
     color: #555;
     font-weight: bold;
+    font-size: 1.1rem; /* Added font size */
     transition: color 0.3s;
 }
 
@@ -200,38 +278,32 @@ main h2 {
 
 /* --- Responsive Styles for Mobile and Tablet --- */
 @media (max-width: 768px) {
-
-    /* Make header stack vertically */
     header .container {
         flex-direction: column;
-        gap: 15px; /* Add space between logo and nav */
+        gap: 15px;
     }
 
-    /* Center navigation links */
     nav ul {
         justify-content: center;
         width: 100%;
     }
     
     nav ul li {
-        margin: 0 15px; /* Adjust spacing between nav items */
+        margin: 0 15px;
     }
 
-    /* Make the "Add Item" button slightly smaller */
     .action-btn {
         padding: 12px 24px;
         font-size: 1rem;
     }
     
-    /* Your grid is already responsive, but we can reduce the minimum size slightly */
     .items-grid {
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     }
 
-    /* Adjust modal for smaller screens */
     .modal-content {
         width: 90%;
-        margin: 5% auto; /* Reduce top margin */
+        margin: 15% auto; /* Adjusted for better vertical centering */
         padding: 20px;
     }
 }
